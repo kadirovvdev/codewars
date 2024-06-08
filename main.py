@@ -39,3 +39,45 @@ def double_every_other(lst):
 
 
 
+#7
+def filter_list(l):
+    new_list =[]
+    for x in l:
+        if type(x) != str:
+            new_list.append(x)
+    return new_list
+
+#8
+
+def inverse_slice(items, a, b):
+    del items[a:b]
+    return items
+
+#9
+
+def find_children(arr1,arr2):
+    L=[]
+    for i in arr2:
+        if i in arr1:
+            if i not in L:
+                L.append(i)
+    L.sort()
+    return L
+
+#10
+
+from statistics import mean
+
+def test(r):
+    dct = {'l': 0, 'a': 0, 'h': 0}
+    for n in r: dct[ 'lah'[(n>6) + (n>8)] ] += 1
+    return [round(mean(r), 3), dct] + ['They did well'] * (sum(dct.values()) == dct['h'])
+
+#11
+
+def reverse_middle(lst):
+    l = len(lst)//2 - 1
+    return lst[l:-l][::-1]
+
+
+
