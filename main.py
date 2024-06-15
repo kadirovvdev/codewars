@@ -80,4 +80,62 @@ def reverse_middle(lst):
     return lst[l:-l][::-1]
 
 
+#12
+
+def partlist(arr):
+    new_arr = []
+    for x in range(1,len(arr)):
+        y = ' '.join(arr[:x])
+        z = ' '.join(arr[x:])
+        new_arr.append((y,z))
+    return new_arr
+
+
+
+#13
+
+def or_arrays(arr1, arr2, n=0):
+    result = []
+
+    for i in range(max(len(arr1), len(arr2))):
+
+        a = b = n;
+
+        if i < len(arr1):
+            a = arr1[i]
+
+        if i < len(arr2):
+            b = arr2[i]
+
+        result.append(b | a);
+
+    return result
+
+
+
+#14
+
+
+def remove_smallest(numbers):
+    if len(numbers) < 1:
+        return numbers
+    idx = numbers.index(min(numbers))
+    return numbers[0:idx] + numbers[idx+1:]
+
+
+#15
+
+bin_to_colors = {1: "black", 2: "brown", 3:"dark brown", 4: "white", 5: "grey", 6: "light brown"}
+colors_to_bin = {v: k for k, v in bin_to_colors.items()}
+
+def bear_fur(bears):
+    return bin_to_colors.get(sum(colors_to_bin.get(k, 7) for k in set(bears)), "unknown")
+
+
+#16
+
+
+def sum_it_up(a):
+    return sum(int(n, b) for n, b in a)
+
 
