@@ -138,4 +138,49 @@ def bear_fur(bears):
 def sum_it_up(a):
     return sum(int(n, b) for n, b in a)
 
+#17
+from collections import defaultdict
+
+def stem_and_leaf(a):
+    d = defaultdict(list)
+    for x in a:
+        d[x//10].append(x % 10)
+    return {x: sorted(y) for x, y in d.items()}
+
+
+#18
+def replace_all(obj, find, replace):
+    for i, o in enumerate(obj):
+        if o == find:
+            try:
+                obj[i] = replace
+            except:
+                obj = obj.replace(obj[i], replace, 1)
+    return obj
+
+
+#19
+
+def reverse_invert(lst):
+    r = []
+    for i in lst:
+        if isinstance(i,int):
+            if i < 0:
+                i = int(str(i)[1:][::-1])
+            else:
+                i = -int(str(i)[::-1])
+            r.append(i)
+    return r
+
+#20
+
+def candies(s):
+    if not s or len(s) == 1:
+        return -1
+    return len(s) * max(s) - sum(s)
+
+#21
+def get_new_notes(salary, bills):
+    return max((salary - sum(bills)), 0) // 5
+
 
