@@ -184,3 +184,71 @@ def get_new_notes(salary, bills):
     return max((salary - sum(bills)), 0) // 5
 
 
+
+#22
+
+def min_max(lst):
+  return [min(lst), max(lst)]
+
+#23
+
+
+def all_rationals():
+    yield (1, 1)
+    for a, b in all_rationals():
+        yield from [(a, a + b), (a + b, b)]
+
+
+#24
+
+def row_sum_odd_numbers(n):
+    return n ** 3
+
+#25
+
+def is_monotone(heights):
+    return sorted(heights) == heights
+
+
+#26
+
+def duplicate_sandwich(arr):
+    pos = {}
+    for i, x in enumerate(arr):
+        if x in pos:
+            return arr[pos[x] + 1 : i]
+        pos[x] = i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#26
+def duplicate_sandwich(arr):
+    pos = {}
+    for i, x in enumerate(arr):
+        if x in pos:
+            return arr[pos[x] + 1 : i]
+        pos[x] = i
+
+
