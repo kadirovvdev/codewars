@@ -219,6 +219,76 @@ def duplicate_sandwich(arr):
             return arr[pos[x] + 1 : i]
         pos[x] = i
 
+#27
+
+def conference_picker(cities_visited, cities_offered):
+    for city in cities_offered:
+        if city not in cities_visited:
+            return city
+    return 'No worthwhile conferences this year!'
+
+
+
+#28
+
+def sum_nested(lst):
+    total = 0
+    for ele in lst:
+        total += ele if type(ele) != list else sum_nested(ele)
+
+    return total
+
+
+
+#29
+
+def find_page_number(pages):
+    n, miss = 1, []
+    for i in pages:
+        if i!=n: miss.append(i)
+        else:    n+=1
+    return miss
+
+
+
+
+
+#30
+
+
+def describeList(lst):
+    if lst:
+        if len(lst) == 1:
+            return 'singleton'
+        return 'longer'
+    return 'empty'
+
+#31
+
+def remove_char(array):
+    array1 = []
+    for i in array:
+        s1 = []
+        for s in i:
+
+            if (s.isdigit()):
+                s1 += s
+        print(s1)
+        s1.insert(-2, '.')
+        s2 = '$' + (''.join(s1))
+
+        array1.append(s2)
+
+    return (array1)
+
+
+#32
+
+from numpy import mean
+def distances_from_average(test_list):
+    avg = mean(test_list)
+    return [round(avg - x, 2) for x in test_list]
+
 
 
 
