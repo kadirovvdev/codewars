@@ -289,6 +289,82 @@ def distances_from_average(test_list):
     avg = mean(test_list)
     return [round(avg - x, 2) for x in test_list]
 
+#33
+
+def lcm(a,b):
+    if gcd(a,b)==0:
+        return 0
+    return a*b/gcd(a,b)
+def gcd(a,b):
+    if b==0:
+        return a
+    return gcd(b,a%b)
+def sum_differences_between_products_and_LCMs(pairs):
+    s=0
+    for i in pairs:
+        s=s+((i[0]*i[1])-lcm(i[0],i[1]))
+    return s
+
+
+#34
+
+
+from collections import defaultdict
+
+
+def repeat_sum(l):
+    count = defaultdict(int)
+    for l1 in l:
+        for val in set(l1):
+            count[val] += 1
+
+    return sum(k for k, v in count.items() if v > 1)
+
+#35
+
+def sort_cards(cards):
+    return sorted(cards, key="A23456789TJQK".index)
+
+#36
+
+
+def sort_grades(lst):
+    empty_list = []
+
+    for element in lst:
+        lst.sort(key=get_value)
+
+    return lst
+
+
+def get_value(wht):
+    value = {
+
+        'VB': -2,
+        'V0': -1,
+        'V0+': 0,
+        'V1': 1,
+        'V2': 2,
+        'V3': 3,
+        'V4': 4,
+        'V5': 5,
+        'V6': 6,
+        'V7': 7,
+        'V8': 8,
+        'V9': 9,
+        'V10': 10,
+        'V11': 11,
+        'V12': 12,
+        'V13': 13,
+        'V14': 14,
+        'V15': 15,
+        'V16': 16,
+        'V17': 17
+
+    }
+
+    return value[wht]
+
 
 
 
