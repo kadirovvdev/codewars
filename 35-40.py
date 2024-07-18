@@ -91,3 +91,57 @@ def closest(l):
         return None
     a = min(a)
     return a if a in list(set(l)) else -a
+
+
+#42
+
+def plastic_balance(a):
+    return plastic_balance(a[1:-1]) if a and a[0]+a[-1] != sum(a[1:-1]) else a
+
+#43
+
+def unite_unique(*arg):
+    res = []
+    for arr in arg:
+        for val in arr:
+            if not val in res: res.append(val)
+    return res
+
+#44
+
+def elements_sum(arr, d=0):
+    a=len(arr)
+    res=0
+    for i in arr:
+        if len(i)>=a:
+            res+=i[a-1]
+        else:
+            res+=d
+        a-=1
+    return res
+
+#45
+
+def compress(_s):
+    s = _s.lower().split()
+    arr = []
+    for i in s:
+        if i not in arr:
+            arr.append(i)
+    return ''.join([str(arr.index(i)) for i in s])
+
+
+#46
+
+def sort_it(un):
+    for g in range(len(un)):
+        for h in range(len(un)-1):
+            cmp1=un[h]
+            cmp2=un[h+1]
+            if type(un[h])==list:
+                cmp1=un[h][0]
+            if type(un[h+1])==list:
+                cmp2=un[h+1][0]
+            if cmp1>cmp2:
+                un[h],un[h+1]=un[h+1],un[h]
+    return un
